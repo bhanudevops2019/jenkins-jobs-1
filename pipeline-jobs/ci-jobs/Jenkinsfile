@@ -20,7 +20,7 @@ mvn sonar:sonar \
 '''
     }
 
-    stage("Compile") {
+    stage("Build") {
         sh '''
 mvn package
 '''
