@@ -19,4 +19,10 @@ mvn sonar:sonar \
   -Dsonar.login=a5ca9e6d4961c7a723106943812895d053987acf
 '''
     }
+
+    stage("Compile") {
+        sh '''
+mvn package
+'''
+    }
 }
