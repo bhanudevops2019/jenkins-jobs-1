@@ -25,5 +25,11 @@ mvn sonar:sonar \
 mvn package
 '''
     }
+
+    stage("Upload Artifacts") {
+        sh '''
+mvn deploy
+'''
+    }
 }
 //
