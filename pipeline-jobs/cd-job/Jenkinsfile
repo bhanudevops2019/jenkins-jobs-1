@@ -7,9 +7,11 @@ node('SLAVE') {
     }
 
     stage("Compile") {
+        dir('DEVELOPMENT') {
         sh '''
 mvn compile
 '''
+        }
     }
     
     stage('Code Quality Check') {
