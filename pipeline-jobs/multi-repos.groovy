@@ -13,6 +13,8 @@ node('SLAVE') {
       }
     }
     stage('Three') {
+      dir('CODE') {
         sh 'ls'
+      }
     }
 }
