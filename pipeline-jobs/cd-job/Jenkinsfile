@@ -27,9 +27,11 @@ mvn sonar:sonar \
     }
 
     stage("Build") {
-        sh '''
+        dir('DEVELOPMENT') {
+            sh '''
 mvn package
 '''
+        }
     }
 
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'TERRAFORM-CREDENTIALS',
