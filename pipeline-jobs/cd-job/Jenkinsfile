@@ -40,10 +40,11 @@ mvn package
         dir('TERRAFORM'){
             git 'https://github.com/citb34/Terraform.git'
             sh '''
-            export AWS_ACCESS_KEY_ID="$USERNAME"
-            export AWS_SECRET_ACCESS_KEY="$PASSWORD"
-            cd 09-test-s3-bucket-creation
-            ls
+                export AWS_ACCESS_KEY_ID="$USERNAME"
+                export AWS_SECRET_ACCESS_KEY="$PASSWORD"
+                cd 09-test-s3-bucket-creation
+                terraform init
+                terraform apply
             '''
             }
         }
