@@ -44,7 +44,7 @@ mvn package
                 export AWS_SECRET_ACCESS_KEY="$PASSWORD"
                 cd 09-test-s3-bucket-creation
                 terraform init
-                terraform apply
+                terraform apply -auto-approve
             '''
             }
         }
