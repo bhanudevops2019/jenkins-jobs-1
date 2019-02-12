@@ -6,10 +6,12 @@ node('SLAVE') {
         }
     }
 
-    stage("Compile") {
-        sh '''
-mvn compile
-'''
+    dir('DEVELOPMENT') {
+        stage("Compile") {
+            sh '''
+               mvn compile
+            '''
+        }
     }
     
     stage('Code Quality Check') {
