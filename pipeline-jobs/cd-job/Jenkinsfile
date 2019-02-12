@@ -44,7 +44,7 @@ mvn package
                 export AWS_SECRET_ACCESS_KEY="$PASSWORD"
                 cd stack-asg
                 terraform init
-                terraform apply -auto-approve
+                terraform apply -auto-approve -var-file=variables/dev.tfvars
             '''
             }
         }
