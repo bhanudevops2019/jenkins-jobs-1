@@ -53,6 +53,7 @@ node('SLAVE') {
                 cd stack-asg
                 terraform init
                 terraform apply -auto-approve -var-file=variables/dev.tfvars
+                terraform output elb >/tmp/elb
             '''
             env.ELB = sh (
                 script: '',
