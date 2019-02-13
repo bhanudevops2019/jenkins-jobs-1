@@ -58,7 +58,7 @@ node('SLAVE') {
                 script: 'cd stack-asg ; terraform init &>/dev/null;terraform output elb',
                 returnStdout: true
                 ).trim()
-            
+            sh "echo $ELB"
             }
         }
     }
