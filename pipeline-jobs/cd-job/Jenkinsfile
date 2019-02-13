@@ -58,7 +58,9 @@ node('SLAVE') {
         }
     }
 
-    stage('')
+    stage('Api-Testing') {
+        
+    }
 }
 //
 //
