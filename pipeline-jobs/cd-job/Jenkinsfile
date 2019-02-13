@@ -55,7 +55,7 @@ node('SLAVE') {
                 terraform apply -auto-approve -var-file=variables/dev.tfvars
             '''
             env.ELB = sh (
-                script: 'ls',
+                script: 'cd terraform output elb',
                 returnStdout: true
                 ).trim()
             }
