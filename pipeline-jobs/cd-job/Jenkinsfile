@@ -55,6 +55,10 @@ node('SLAVE') {
                 terraform apply -auto-approve -var-file=variables/dev.tfvars
             '''
             env.ELB = sh 'terraform output elb'
+            GIT_COMMIT_EMAIL = sh (
+    script: 'git --no-pager show -s --format=\'%ae\'',
+    returnStdout: true
+).trim()
             }
         }
     }
