@@ -53,8 +53,8 @@ node('SLAVE') {
                 cd stack-asg
                 terraform init
                 terraform apply -auto-approve -var-file=variables/dev.tfvars
-                env.
             '''
+            env.
             }
         }
     }
