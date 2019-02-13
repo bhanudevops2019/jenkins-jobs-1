@@ -56,7 +56,7 @@ node('SLAVE') {
                 terraform output elb >/tmp/elb
             '''
             env.ELB = sh (
-                script: '',
+                script: 'cat /tmp/elb',
                 returnStdout: true
                 ).trim()
             sh "echo $ELB"
