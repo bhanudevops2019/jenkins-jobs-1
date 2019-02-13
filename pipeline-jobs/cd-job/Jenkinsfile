@@ -54,7 +54,7 @@ node('SLAVE') {
                 terraform init
                 terraform apply -auto-approve -var-file=variables/dev.tfvars
             '''
-            env.
+            env.ELB = sh 'terraform output elb'
             }
         }
     }
