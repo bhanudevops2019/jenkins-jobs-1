@@ -66,7 +66,7 @@ node('SLAVE') {
         dir('TESTING'){
             git 'https://github.com/citb34/selenium-sauce-labs.git'
             sh '''
-                echo 
+                echo $ELB
             '''
             }
     }
