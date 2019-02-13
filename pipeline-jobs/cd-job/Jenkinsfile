@@ -45,7 +45,6 @@ node('SLAVE') {
     stage('Create-Test-Environment') {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'TERRAFORM-CREDENTIALS',
     usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-        if (! skip) { 
         dir('TERRAFORM'){
             git 'https://github.com/citb34/Terraform.git'
             sh '''
