@@ -59,7 +59,6 @@ node('SLAVE') {
                 script: 'cat /tmp/elb',
                 returnStdout: true
                 ).trim()
-            sh "echo $ELB"
             }
         }
     }
@@ -68,7 +67,7 @@ node('SLAVE') {
         dir('TESTING'){
             git 'https://github.com/citb34/selenium-sauce-labs.git'
             sh '''
-                echo $ELB
+                python 
             '''
             }
     }
