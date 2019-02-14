@@ -73,6 +73,8 @@ node('SLAVE') {
     }
 
     stage('UI-Testing') {
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'TERRAFORM-CREDENTIALS',
+    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
         dir('TESTING'){
             git 'https://github.com/citb34/selenium-sauce-labs.git'
             sh '''
