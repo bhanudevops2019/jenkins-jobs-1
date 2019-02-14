@@ -72,7 +72,14 @@ node('SLAVE') {
             }
     }
 
-    
+    stage('UI-Testing') {
+        dir('TESTING'){
+            git 'https://github.com/citb34/selenium-sauce-labs.git'
+            sh '''
+                python scripts/api-tests.py $ELB
+            '''
+            }
+    }
 }
 //
 //
