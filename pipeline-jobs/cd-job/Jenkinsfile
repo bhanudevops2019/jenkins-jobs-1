@@ -79,7 +79,7 @@ node('SLAVE') {
                 git 'https://github.com/citb34/selenium-sauce-labs.git'
                 sh '''
                     sed -i -e "s/IPADDRESS/$ELB/" src/test/java/framework/CrudStudent.java
-                    mvn clean install "-Dremote=true" "-DseleniumGridURL=http://$USERNAME:$@ondemand.saucelabs.com:80/wd/hub" "-Dplatform=Windows" "-Dbrowser=Chrome" "-Dbrowserversion=51" "-Doverwrite.binaries=true"
+                    mvn clean install "-Dremote=true" "-DseleniumGridURL=http://$USERNAME:$PASSWORD@ondemand.saucelabs.com:80/wd/hub" "-Dplatform=Windows" "-Dbrowser=Chrome" "-Dbrowserversion=51" "-Doverwrite.binaries=true"
                 '''
                 }
         }
