@@ -100,7 +100,7 @@ pipelineJob('harness-pipelines/compile') {
           }
         }
       }
-      'scriptPath'('harness-pipeline-jobs/multi-repos.groovy')
+      'scriptPath'('harness-pipeline-jobs/compile')
       'lightweight'(true)
     }
   }
