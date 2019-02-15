@@ -107,7 +107,7 @@ pipelineJob('harness-pipelines/compile') {
 }
 
 pipelineJob('harness-pipelines/code-quality') {
-  description('compile')
+  description('Code-Quality')
   configure { flowdefinition ->
     flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps@2.63') {
       'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git@4.0.0-rc') {
@@ -124,7 +124,7 @@ pipelineJob('harness-pipelines/code-quality') {
           }
         }
       }
-      'scriptPath'('harness-pipeline-jobs/')
+      'scriptPath'('harness-pipeline-jobs/code-quality')
       'lightweight'(true)
     }
   }
