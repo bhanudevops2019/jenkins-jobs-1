@@ -1,3 +1,6 @@
 node('SLAVE') {
-    stage('Code-Quality'/)
+    stage('Code-Quality') {
+        git 'https://github.com/citb34/studentapp-ui.git'
+        sh ''''
+    }
 }
