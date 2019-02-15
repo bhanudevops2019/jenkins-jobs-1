@@ -1,3 +1,5 @@
 node('SLAVE') {
-    stage(')
+    stage('COMPILE') {
+        sh 'echo Hello'
+    }
 }
