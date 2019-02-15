@@ -82,8 +82,8 @@ folder('harness-pipelines') {
     description('Jenkins Pipelines for Harness to run')
 }
 
-pipelineJob('harness-pipelines/') {
-  description('multi-repos-check')
+pipelineJob('harness-pipelines/compile') {
+  description('compile')
   configure { flowdefinition ->
     flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps@2.63') {
       'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git@4.0.0-rc') {
