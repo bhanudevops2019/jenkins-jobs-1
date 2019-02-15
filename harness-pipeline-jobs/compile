@@ -1,5 +1,6 @@
 node('SLAVE') {
     stage('COMPILE') {
-        git ''
+        git 'https://github.com/citb34/studentapp-ui.git'
+        
     }
 }
