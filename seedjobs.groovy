@@ -82,6 +82,26 @@ folder('harness-pipelines') {
     description('Jenkins Pipelines for Harness to run')
 }
 
-('harness-pipelines/compile') {
-    
+pipelineJob('') {
+  description('multi-repos-check')
+  configure { flowdefinition ->
+    flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps@2.63') {
+      'scm'(class:'hudson.plugins.git.GitSCM',plugin:'git@4.0.0-rc') {
+        'configVersion'(2)
+        'userRemoteConfigs' {
+          'hudson.plugins.git.UserRemoteConfig' {
+            'url'('https://github.com/citb34/jenkins-jobs.git')\
+          }
+        }
+
+        'branches' {
+          'hudson.plugins.git.BranchSpec' {
+            'name'('*/master')
+          }
+        }
+      }
+      'scriptPath'('pipeline-jobs/multi-repos.groovy')
+      'lightweight'(true)
+    }
+  }
 }
