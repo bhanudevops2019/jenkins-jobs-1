@@ -82,7 +82,7 @@ folder('harness-pipelines') {
     description('Jenkins Pipelines for Harness to run')
 }
 
-pipelineJob('') {
+pipelineJob('harness-pipelines/') {
   description('multi-repos-check')
   configure { flowdefinition ->
     flowdefinition << delegate.'definition'(class:'org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition',plugin:'workflow-cps@2.63') {
