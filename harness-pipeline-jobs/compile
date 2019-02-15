@@ -2,6 +2,7 @@ node('SLAVE') {
     stage('COMPILE') {
         git 'https://github.com/citb34/studentapp-ui.git'
         sh '''
-
+            mvn compile 
+'''
     }
 }
