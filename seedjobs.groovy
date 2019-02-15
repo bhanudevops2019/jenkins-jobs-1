@@ -77,7 +77,7 @@ pipelineJob('multi-repos-check') {
   }
 }
 
-folder('') {
+folder('harness-') {
     displayName('Project A')
     description('Folder for project A')
 }
