@@ -2,7 +2,7 @@ node('SLAVE') {
     stage('Code-Quality') {
         git 'https://github.com/citb34/studentapp-ui.git'
         sh '''
-            mvn sonar:sonar \
+            mvn compile sonar:sonar \
                 -Dsonar.projectKey=citb34_studentapp-ui \
                 -Dsonar.organization=citb34 \
                 -Dsonar.host.url=https://sonarcloud.io \
