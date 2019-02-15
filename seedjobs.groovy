@@ -79,7 +79,7 @@ pipelineJob('multi-repos-check') {
 
 folder('harness-pipelines') {
     displayName('Harness Pipelines')
-    description('Folder for project A')
+    description('Jenkins Pipelines for Harness to run')
 }
 
 folder('project-a/testing') {
