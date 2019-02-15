@@ -82,6 +82,6 @@ folder('harness-pipelines') {
     description('Jenkins Pipelines for Harness to run')
 }
 
-folder('harness-pipelines/compile') {
-    description('Folder containing all QA jobs for project A')
+('harness-pipelines/compile') {
+    
 }
