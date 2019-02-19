@@ -12,16 +12,9 @@ pipeline {
         git(url: 'https://github.com/citb34/studentapp-ui.git', branch: 'master')
       }
     }
-    stage('Package') {
-      agent {
-        node {
-          label 'SLAVE'
-        }
 
-      }
       steps {
         sh 'mvn package'
       }
-    }
   }
 }
